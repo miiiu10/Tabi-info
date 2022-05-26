@@ -64,7 +64,7 @@ def get_weather(lat, lon):
              "lon" : "{}".format(lon),
              "units"     : "metric",
              "lang"      : "ja",
-             "appid"     : "dedfc953bd7d1a40042d9d001862118a"
+             "appid"     : "Your appid"
             }))
     print("URL:",url)
     f_url = urllib.request.urlopen(url).read()
