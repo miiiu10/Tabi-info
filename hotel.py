@@ -45,7 +45,7 @@ def search_hotel(lat, lng):
     # APIを通して、Webサービスを実行
     url = "https://app.rakuten.co.jp/services/api/Travel/SimpleHotelSearch/20170426?{}".format(
         urllib.parse.urlencode(
-            {"applicationId"   : "1010432289426825145",
+            {"applicationId"   : "Your application ID",
              "format"          : "json",
              "latitude"        : "{}".format(lat),
              "longitude"       : "{}".format(lng),
