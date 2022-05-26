@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Tabi info</title>
+	<link rel="stylesheet" href="static/style.css">
+  </head>
+  <body>
+	<h1>{{ title }}</h1>
+	{% if geo_count==0 %}
+	<p>検索結果が見つかりませんでした。<p>
+	<p>別の場所をお試し下さい。<p>
+	{% else %}
+	<img src={{image_url}} >
+	<h2>{{ message }}</h2>
+	<h3>{{ weather_message }}</h3>
+	<p>{% for i,p,h_list in weekly_weather %}
+		<p>{{ i }}</p>
+		{% if loop.index >= 3 %}
+			<img src={{p}} ><br>
+		{% endif %}
+			<table>
+				<tr>
+					{% for h in h_list %}
+					<td><img src={{h}}></td>
+					{% endfor %}
+				</tr>
+				<tr>
+					{% for h in h_list %}
+					<td>{{loop.index*3}}時の天気</td>
+					{% endfor %}
+				</tr>
+			</table>
+		{% endfor %}</p>
+	<h3>{{ gourmet_result }}</h3>
+	<p>{{ gourmet_message }}</p>
+	<p>{% for i,p,u in gourmet %}
+		{{ i }}<br>
+		<a href={{u}} target="_blank" rel="noopener"><img src={{p}} alt="店舗url" width="300" height="200"></a><br>
+		{% endfor %}</p>
+	<h3>{{ hotel_result }}</h3>
+	<p>{{ hotel_message }}</p>
+	<p>{% for i,p,rp,u in hotel %}
+		{{ i }}<br>
+		<a href={{u}} target="_blank" rel="noopener"><img src={{p}} alt="店舗url" width="300" height="200"></a>
+			{% if rp == None %}
+			<br>
+			{% else %}
+			<a href={{u}} target="_blank" rel="noopener"><img src={{rp}} alt="店舗url" width="300" height="200"></a><br>
+			{% endif %}
+		{% endfor %}</p>
+	{% endif %}
+	<form action="/" method="POST" enctype="multipart/form-data">
+		<div>
+			<label for="place">場所：</label>
+			<input type="text" id="place" name="place" placeholder="場所">	
+		</div>
+		<div>
+			<input type="submit" value="検索">
+		</div>
+	</form>
+	<a href="http://webservice.recruit.co.jp/"><img src="http://webservice.recruit.co.jp/banner/hotpepper-s.gif" alt="ホットペッパー Webサービス" width="135" height="17" border="0" title="ホットペッパー Webサービス"></a>
+	<footer>
+		<a href="#" id="page-top"><i class="blogicon-chevron-up"></i></a>
+	</footer>
+</body>
+</html>
