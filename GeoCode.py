@@ -17,7 +17,7 @@ def count(json_result):
 def get_position(query):
     url = "https://map.yahooapis.jp/geocode/cont/V1/contentsGeoCoder?{}".format(
         urllib.parse.urlencode(
-            {"appid"   : "dj00aiZpPWg4Sk96SXRBaWdxaiZzPWNvbnN1bWVyc2VjcmV0Jng9NTM-",
+            {"appid"   : "Your appid",
              "query"   : "{}".format(query),
              "category": "landmark",
              "output"  : "json"                                    # レスポンス型式をJSONに指定
