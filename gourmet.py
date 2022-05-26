@@ -37,7 +37,7 @@ def search_gourmet(lat, lng):
     # APIを通して、Webサービスを実行
     url = "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?{}".format(
         urllib.parse.urlencode(
-            {"key"     : "6d5767d5eb3f2877",                         # APIキー(このキーはダミー．自分で取得したものを記入。db*3+9)
+            {"key"     : "Your API key",                         # APIキー(このキーはダミー．自分で取得したものを記入。db*3+9)
              "lat"     : "{}".format(lat),
              "lng"     : "{}".format(lng),
              "range"   : "5",
